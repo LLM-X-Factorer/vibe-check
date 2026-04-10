@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useState } from "react";
+import QRCode from "qrcode";
 import { PersonalityType } from "@/data/types";
 
 const POSTER_W = 1080;
@@ -154,25 +155,33 @@ async function drawPoster(type: PersonalityType): Promise<string> {
   ctx.lineTo(POSTER_W - 120, dividerY);
   ctx.stroke();
 
-  // URL box (instead of QR code — simpler, more reliable)
-  const boxY = dividerY + 60;
-  const boxW = 500;
-  const boxH = 200;
-  const boxX = (POSTER_W - boxW) / 2;
-  ctx.fillStyle = hexToRgba(type.color, 0.08);
-  ctx.strokeStyle = hexToRgba(type.color, 0.3);
-  ctx.lineWidth = 2;
-  roundRect(ctx, boxX, boxY, boxW, boxH, 24);
-  ctx.fill();
-  ctx.stroke();
+  // QR Code
+  const qrY = dividerY + 60;
+  const qrSize = 280;
+  try {
+    const qrDataUrl = await QRCode.toDataURL(SITE_URL, {
+      width: qrSize * 2,
+      margin: 1,
+      color: { dark: "#ffffff", light: "#00000000" },
+      errorCorrectionLevel: "M",
+    });
+    const qrImg = await loadImage(qrDataUrl);
+    if (qrImg) {
+      ctx.drawImage(qrImg, (POSTER_W - qrSize) / 2, qrY, qrSize, qrSize);
+    }
+  } catch {
+    // QR fallback: show URL text
+    ctx.fillStyle = "rgba(255,255,255,0.6)";
+    ctx.font = "500 34px monospace";
+    ctx.textAlign = "center";
+    ctx.fillText("devbug.llmxfactor.cloud", POSTER_W / 2, qrY + 140);
+  }
 
+  // CTA below QR
   ctx.fillStyle = "rgba(255,255,255,0.4)";
-  ctx.font = "400 28px system-ui, sans-serif";
+  ctx.font = "400 32px system-ui, sans-serif";
   ctx.textAlign = "center";
-  ctx.fillText("测测你是哪种 Bug？", POSTER_W / 2, boxY + 70);
-  ctx.fillStyle = type.color;
-  ctx.font = "600 34px monospace";
-  ctx.fillText("devbug.llmxfactor.cloud", POSTER_W / 2, boxY + 130);
+  ctx.fillText("扫码测试你的 Bug 人格", POSTER_W / 2, qrY + qrSize + 50);
 
   // Footer
   ctx.fillStyle = "rgba(255,255,255,0.15)";
