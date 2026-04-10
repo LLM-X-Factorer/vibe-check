@@ -1,0 +1,71 @@
+import { PersonalityType } from "@/data/types";
+
+interface ResultCardProps {
+  type: PersonalityType;
+}
+
+export default function ResultCard({ type }: ResultCardProps) {
+  return (
+    <div
+      id="result-card"
+      className={`relative w-full max-w-sm mx-auto rounded-2xl overflow-hidden bg-gradient-to-b ${type.bgGradient} border border-white/10 card-glow`}
+      style={{ "--glow-color": `${type.color}33` } as React.CSSProperties}
+    >
+      {/* Header bar */}
+      <div className="px-5 pt-4 pb-2 flex justify-between items-center">
+        <span className="text-[10px] font-mono tracking-widest text-white/30 uppercase">
+          DevBug Personality Test
+        </span>
+        <span className="text-[10px] font-mono text-white/30">
+          2026
+        </span>
+      </div>
+
+      {/* Main content */}
+      <div className="px-6 py-8 text-center">
+        {/* Emoji */}
+        <div className="text-7xl mb-4 emoji-bounce">{type.emoji}</div>
+
+        {/* Type name */}
+        <h2
+          className="text-3xl font-black mb-1 fade-up"
+          style={{ color: type.color }}
+        >
+          {type.name}
+        </h2>
+        <p className="text-sm font-mono text-white/50 mb-6 fade-up-delay-1">
+          {type.subtitle}
+        </p>
+
+        {/* Description */}
+        <p className="text-base text-white/80 leading-relaxed mb-6 fade-up-delay-2">
+          {type.description}
+        </p>
+
+        {/* Traits */}
+        <div className="flex justify-center gap-2 flex-wrap fade-up-delay-3">
+          {type.traits.map((trait) => (
+            <span
+              key={trait}
+              className="px-3 py-1 rounded-full text-xs font-medium border"
+              style={{
+                borderColor: `${type.color}44`,
+                color: type.color,
+                backgroundColor: `${type.color}11`,
+              }}
+            >
+              {trait}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Footer / CTA */}
+      <div className="px-6 py-4 border-t border-white/5 text-center">
+        <p className="text-[11px] text-white/30">
+          想看完整开发者标本报告？→ vibeid.dev
+        </p>
+      </div>
+    </div>
+  );
+}
