@@ -43,3 +43,6 @@ next-env.d.ts
 # project-specific
 /scripts/
 unified_inbox.json
+miaoda-prompt.md
+watcha-logo.png
+watcha-cover.png
