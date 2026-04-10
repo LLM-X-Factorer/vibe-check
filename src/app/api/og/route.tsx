@@ -42,7 +42,7 @@ export async function GET(request: Request) {
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
-            padding: "60px",
+            padding: "40px 60px",
             position: "relative",
           }}
         >
@@ -53,7 +53,7 @@ export async function GET(request: Request) {
               letterSpacing: "4px",
               color: "#666",
               textTransform: "uppercase",
-              marginBottom: 40,
+              marginBottom: 24,
               fontFamily: "monospace",
               display: "flex",
             }}
@@ -62,17 +62,17 @@ export async function GET(request: Request) {
           </div>
 
           {/* Emoji */}
-          <div style={{ fontSize: 100, marginBottom: 20, display: "flex" }}>
+          <div style={{ fontSize: 100, marginBottom: 16, display: "flex" }}>
             {type.emoji}
           </div>
 
           {/* Name */}
           <div
             style={{
-              fontSize: 56,
+              fontSize: 52,
               fontWeight: 900,
               color: type.color,
-              marginBottom: 8,
+              marginBottom: 6,
               display: "flex",
             }}
           >
@@ -82,9 +82,9 @@ export async function GET(request: Request) {
           {/* Subtitle */}
           <div
             style={{
-              fontSize: 20,
+              fontSize: 18,
               color: "#666",
-              marginBottom: 30,
+              marginBottom: 20,
               fontFamily: "monospace",
               display: "flex",
             }}
@@ -95,10 +95,10 @@ export async function GET(request: Request) {
           {/* Description */}
           <div
             style={{
-              fontSize: 24,
+              fontSize: 22,
               color: "#ccc",
               textAlign: "center",
-              maxWidth: 600,
+              maxWidth: 580,
               lineHeight: 1.5,
               display: "flex",
             }}
@@ -111,7 +111,7 @@ export async function GET(request: Request) {
             style={{
               display: "flex",
               gap: 12,
-              marginTop: 30,
+              marginTop: 24,
             }}
           >
             {type.traits.map((trait) => (
@@ -120,7 +120,7 @@ export async function GET(request: Request) {
                 style={{
                   padding: "6px 16px",
                   borderRadius: 999,
-                  fontSize: 16,
+                  fontSize: 15,
                   color: type.color,
                   border: `1px solid ${type.color}66`,
                   display: "flex",

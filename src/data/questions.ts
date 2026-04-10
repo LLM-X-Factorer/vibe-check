@@ -12,221 +12,221 @@ export interface Question {
 export const questions: Question[] = [
   {
     id: 1,
-    text: "你的代码报错了，第一反应是？",
+    text: "AI 给你生成了一段你看不懂的代码，但能跑。你怎么做？",
     answers: [
       {
-        text: "console.log 大法好，到处插",
-        scores: { "3am": 2, coffee: 1, "ctrl-z": 1 },
+        text: "Tab 接受，不问为什么",
+        scores: { "tab-tab": 2, "accept-all": 1, "ship-fast": 1 },
       },
       {
-        text: "复制错误信息，直奔 Stack Overflow",
-        scores: { stackoverflow: 2, "copy-paste": 2 },
+        text: "让 AI 给我解释一遍（然后还是没懂）",
+        scores: { impostor: 2, "human-usb": 1, "cyber-foreman": 1 },
       },
       {
-        text: "关掉终端，假装没看见",
-        scores: { unread: 2, "rm-rf": 1, "npm-pray": 1 },
+        text: "手动重写一遍（然后发现 AI 写得更好）",
+        scores: { "ancient-coder": 2, todo: 1, "vibe-debugger": 1 },
       },
       {
-        text: "一定是框架的 bug，不是我的问题",
-        scores: { "force-push": 2, interview: 1, architect: 1 },
+        text: "删掉重新 prompt，直到我能看懂",
+        scores: { "prompt-novelist": 2, "cursor-pm": 1, translator: 1 },
       },
     ],
   },
   {
     id: 2,
-    text: "周五下午 5 点，PM 说「就加一个小功能」。你：",
+    text: "你的 Cursor / Copilot 突然挂了，你的反应是？",
     answers: [
       {
-        text: "「好的」（心里已经在骂人了）",
-        scores: { impostor: 2, unread: 1, coffee: 1 },
+        text: "陷入瘫痪，忘记怎么写 for 循环了",
+        scores: { "tab-tab": 2, "human-usb": 2 },
       },
       {
-        text: "写了个半成品直接推上去，周一再说",
-        scores: { "force-push": 2, "next-version": 2 },
+        text: "终于可以证明我不需要 AI（然后偷偷用 ChatGPT）",
+        scores: { "ancient-coder": 1, impostor: 2, "prompt-novelist": 1 },
       },
       {
-        text: "开始重构整个模块，反正今晚没事",
-        scores: { refactorer: 2, "3am": 1, architect: 1 },
+        text: "翻出三年前的 Stack Overflow 收藏夹",
+        scores: { todo: 1, "tech-debt": 1, "3am": 2 },
       },
       {
-        text: "已经在收拾书包了，假装没听见",
-        scores: { "rm-rf": 2, unread: 2 },
+        text: "直接下班",
+        scores: { "rm-rf": 2, "ship-fast": 1, "vibe-debugger": 1 },
       },
     ],
   },
   {
     id: 3,
-    text: "你的 PR 挂了 5 天没人 review。你：",
+    text: "Code Review 时发现代码 95% 是 AI 生成的，你怎么看？",
     answers: [
       {
-        text: "自己 approve 自己 merge",
-        scores: { "force-push": 2, "copy-paste": 1, "rm-rf": 1 },
+        text: "这就是我的代码，AI 只是我的手",
+        scores: { "accept-all": 2, "ship-fast": 1, "tab-tab": 1 },
       },
       {
-        text: "在群里 @ 所有人，附带一段长文解释",
-        scores: { architect: 2, interview: 1, coffee: 1 },
+        text: "心虚地点了 Approve",
+        scores: { impostor: 2, "accept-all": 1, "cyber-foreman": 1 },
       },
       {
-        text: "默默关掉 PR，代码留在本地慢慢腐烂",
-        scores: { unread: 2, impostor: 2 },
+        text: "认真 review 但其实也看不懂",
+        scores: { "vibe-debugger": 2, "cursor-pm": 1, "human-usb": 1 },
       },
       {
-        text: "趁没人 review 把代码重写一遍",
-        scores: { refactorer: 2, "ctrl-z": 1, todo: 1 },
+        text: "等等，我的代码也是这样的",
+        scores: { "tech-debt": 2, "prompt-novelist": 1, "tab-tab": 1 },
       },
     ],
   },
   {
     id: 4,
-    text: "打开一个 6 个月前自己写的文件。感受是：",
+    text: "老板说「AI 时代不需要这么多程序员了」，你的反应？",
     answers: [
       {
-        text: "「这谁写的垃圾？」（git blame → 是自己）",
-        scores: { "ctrl-z": 2, impostor: 2 },
+        text: "默默打开招聘网站",
+        scores: { "rm-rf": 2, impostor: 1, "3am": 1 },
       },
       {
-        text: "完全看不懂，但能跑就绝对不碰",
-        scores: { "copy-paste": 2, "next-version": 1, "npm-pray": 1 },
+        text: "「老板你试试让 AI 对接甲方」",
+        scores: { translator: 2, "cyber-foreman": 1, "ancient-coder": 1 },
       },
       {
-        text: "立刻开始重构，手已经按不住了",
-        scores: { refactorer: 2, architect: 1, "ctrl-z": 1 },
+        text: "立刻学习 Prompt Engineering",
+        scores: { "prompt-novelist": 2, "human-usb": 1, "cursor-pm": 1 },
       },
       {
-        text: "加一行 // TODO: refactor this 然后关掉",
-        scores: { todo: 2, unread: 1, "next-version": 1 },
+        text: "打开 Cursor 演示自己的不可替代性",
+        scores: { "tab-tab": 1, "ship-fast": 2, "accept-all": 1 },
       },
     ],
   },
   {
     id: 5,
-    text: "新项目启动，你第一件事做什么？",
+    text: "你用 AI 写的项目上线后出了 bug，你怎么修？",
     answers: [
       {
-        text: "花 3 天搭建「完美」的项目架构",
-        scores: { architect: 2, refactorer: 1, todo: 1 },
+        text: "把报错信息原封不动粘贴给 AI",
+        scores: { "human-usb": 2, "tab-tab": 1, "accept-all": 1 },
       },
       {
-        text: "直接开写，边写边想，能跑就行",
-        scores: { "force-push": 2, "3am": 1, coffee: 1 },
+        text: "让 AI 随机改改，改到不报错为止",
+        scores: { "vibe-debugger": 2, "tech-debt": 1, "ship-fast": 1 },
       },
       {
-        text: "先搜索有没有现成的可以「借鉴」",
-        scores: { stackoverflow: 2, "copy-paste": 2 },
+        text: "回滚到上个版本假装没发生",
+        scores: { "rm-rf": 1, "ship-fast": 1, todo: 2 },
       },
       {
-        text: "创建 repo，写了个 README，然后就没有然后了",
-        scores: { todo: 2, "readme-blank": 1, "next-version": 1 },
+        text: "终于开始认真读代码了",
+        scores: { "ancient-coder": 2, impostor: 1, "cyber-foreman": 1 },
       },
     ],
   },
   {
     id: 6,
-    text: "线上出了 P0 事故，你的第一反应：",
+    text: "同事问你「这段代码是什么意思」。你：",
     answers: [
       {
-        text: "「不是我上次改的那块吧？」（是的）",
-        scores: { "ctrl-z": 2, impostor: 1, "npm-pray": 1 },
+        text: "「你问 Claude 啊，这是它写的」",
+        scores: { "human-usb": 2, "cursor-pm": 2 },
       },
       {
-        text: "先看看影响范围，影响不大就假装没看见",
-        scores: { unread: 2, "npm-pray": 2 },
+        text: "「这很简单的」（让 AI 现场解释了一遍）",
+        scores: { impostor: 2, "tab-tab": 1, "accept-all": 1 },
       },
       {
-        text: "紧急 hotfix，但引入了两个新 bug",
-        scores: { "force-push": 2, "next-version": 1, "ctrl-z": 1 },
+        text: "开始画架构图讲设计理念（虽然实现是 AI 做的）",
+        scores: { "cyber-foreman": 2, translator: 1, "prompt-novelist": 1 },
       },
       {
-        text: "在群里发「我看看」（然后去泡咖啡）",
-        scores: { coffee: 2, architect: 1, "rm-rf": 1 },
+        text: "「别碰这块，碰了就炸」",
+        scores: { "security-hole": 2, "tech-debt": 1, "vibe-debugger": 1 },
       },
     ],
   },
   {
     id: 7,
-    text: "你怎么学习新技术？",
+    text: "面试被问「你最擅长什么编程语言？」你的真实答案是？",
     answers: [
       {
-        text: "看完文档前 3 页就觉得自己会了",
-        scores: { interview: 2, "force-push": 1, impostor: 1 },
+        text: "自然语言（中文 / 英文）",
+        scores: { "prompt-novelist": 2, translator: 2 },
       },
       {
-        text: "找个视频教程，2 倍速看完",
-        scores: { stackoverflow: 1, "copy-paste": 1, coffee: 2 },
+        text: "「看 AI 用什么我就擅长什么」",
+        scores: { "tab-tab": 2, "accept-all": 1, "human-usb": 1 },
       },
       {
-        text: "等别人踩完坑，直接看总结",
-        scores: { unread: 1, "npm-pray": 2, "copy-paste": 1 },
+        text: "「全栈」（因为 AI 什么都能写）",
+        scores: { "ship-fast": 2, "vibe-debugger": 1, "tech-debt": 1 },
       },
       {
-        text: "从 Hello World 到放弃，全程 3 天",
-        scores: { "ctrl-z": 2, todo: 2 },
+        text: "其实我上次手写代码是三个月前了",
+        scores: { "3am": 1, "ancient-coder": 1, impostor: 2 },
       },
     ],
   },
   {
     id: 8,
-    text: "你的 node_modules：",
+    text: "你的 Git 提交历史是什么画风？",
     answers: [
       {
-        text: "有多大？不知道，也不敢看",
-        scores: { "npm-pray": 2, unread: 1, "next-version": 1 },
+        text: "全是 fix、update、wip",
+        scores: { "ship-fast": 2, "tech-debt": 2 },
       },
       {
-        text: "刚删了，正在 npm install（第 3 次了）",
-        scores: { "ctrl-z": 2, coffee: 1, "3am": 1 },
+        text: "让 AI 写的完美 commit message",
+        scores: { "cursor-pm": 2, "prompt-novelist": 1, "tab-tab": 1 },
       },
       {
-        text: "连同 node_modules 一起 push 到了 git",
-        scores: { "force-push": 2, "readme-blank": 2 },
+        text: "一个巨大的 squash commit: feat: everything",
+        scores: { "accept-all": 2, "vibe-debugger": 1, "rm-rf": 1 },
       },
       {
-        text: "正在写一个工具来管理它（这是第 3 个了）",
-        scores: { refactorer: 2, architect: 2 },
+        text: "其实我一直在 main 上直推",
+        scores: { "security-hole": 2, "ship-fast": 1, todo: 1 },
       },
     ],
   },
   {
     id: 9,
-    text: "同事问你「这段代码是什么意思」。你：",
+    text: "你打开了一个没有 AI 辅助的老项目代码，感受是？",
     answers: [
       {
-        text: "「你看注释啊」（没有注释）",
-        scores: { "readme-blank": 2, unread: 1, "force-push": 1 },
+        text: "考古现场，居然有人手写了这些",
+        scores: { "tab-tab": 1, "human-usb": 1, "cyber-foreman": 2 },
       },
       {
-        text: "「这很简单的」（自己也忘了）",
-        scores: { impostor: 2, "copy-paste": 1, interview: 1 },
+        text: "默默粘贴到 Claude 里让它解释",
+        scores: { "prompt-novelist": 1, "human-usb": 2, "accept-all": 1 },
       },
       {
-        text: "开始长篇大论讲设计理念，停不下来",
-        scores: { architect: 2, interview: 2 },
+        text: "怀念那个纯真的年代",
+        scores: { "ancient-coder": 2, "3am": 1, todo: 1 },
       },
       {
-        text: "「别碰这块，碰了就炸」",
-        scores: { "rm-rf": 2, "next-version": 1, "npm-pray": 1 },
+        text: "这代码虽然老，但至少没有安全漏洞",
+        scores: { "security-hole": 2, "tech-debt": 1, "vibe-debugger": 1 },
       },
     ],
   },
   {
     id: 10,
-    text: "如果你的职业生涯是一条 git commit message：",
+    text: "你对「Vibe Coding」这个词的态度是？",
     answers: [
       {
-        text: "fix: 临时修复（已经临时了 3 年）",
-        scores: { "next-version": 2, todo: 1, "copy-paste": 1 },
+        text: "这就是我的工作方式，有问题吗？",
+        scores: { "accept-all": 2, "tab-tab": 1, "ship-fast": 1 },
       },
       {
-        text: "feat: 不知道干嘛的但是能跑",
-        scores: { "npm-pray": 2, "force-push": 1, stackoverflow: 1 },
+        text: "我不 vibe code，我是「AI 增强型工程师」",
+        scores: { translator: 2, "cursor-pm": 1, "cyber-foreman": 1 },
       },
       {
-        text: "refactor: 第 47 次重构，这次一定",
-        scores: { refactorer: 2, "ctrl-z": 2 },
+        text: "偷偷 vibe 但嘴上说自己不 vibe",
+        scores: { impostor: 2, "3am": 1, "prompt-novelist": 1 },
       },
       {
-        text: "chore: 更新简历",
-        scores: { "rm-rf": 2, impostor: 1, "3am": 1 },
+        text: "反正老板看不懂代码，怎么说都行",
+        scores: { "rm-rf": 1, "tech-debt": 1, "security-hole": 2 },
       },
     ],
   },

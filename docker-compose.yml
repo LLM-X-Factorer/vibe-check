@@ -1,0 +1,7 @@
+services:
+  vibe-check:
+    build: .
+    container_name: vibe-check
+    restart: unless-stopped
+    ports:
+      - "3003:3000"

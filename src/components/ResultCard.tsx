@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PersonalityType } from "@/data/types";
 
 interface ResultCardProps {
@@ -22,9 +23,18 @@ export default function ResultCard({ type }: ResultCardProps) {
       </div>
 
       {/* Main content */}
-      <div className="px-6 py-8 text-center">
-        {/* Emoji */}
-        <div className="text-7xl mb-4 emoji-bounce">{type.emoji}</div>
+      <div className="px-6 py-6 text-center">
+        {/* Illustration */}
+        <div className="mx-auto mb-3 w-36 h-36 relative emoji-bounce">
+          <Image
+            src={`/illustrations/${type.id}.webp`}
+            alt={type.emoji}
+            width={144}
+            height={144}
+            className="rounded-2xl object-cover"
+            priority
+          />
+        </div>
 
         {/* Type name */}
         <h2
@@ -33,12 +43,12 @@ export default function ResultCard({ type }: ResultCardProps) {
         >
           {type.name}
         </h2>
-        <p className="text-sm font-mono text-white/50 mb-6 fade-up-delay-1">
+        <p className="text-sm font-mono text-white/50 mb-5 fade-up-delay-1">
           {type.subtitle}
         </p>
 
         {/* Description */}
-        <p className="text-base text-white/80 leading-relaxed mb-6 fade-up-delay-2">
+        <p className="text-base text-white/80 leading-relaxed mb-5 fade-up-delay-2">
           {type.description}
         </p>
 
