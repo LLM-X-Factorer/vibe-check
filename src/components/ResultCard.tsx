@@ -70,11 +70,19 @@ export default function ResultCard({ type }: ResultCardProps) {
         </div>
       </div>
 
-      {/* Footer / CTA */}
-      <div className="px-6 py-4 border-t border-white/5 text-center">
-        <p className="text-[11px] text-white/30">
-          想看完整开发者标本报告？→ vibeid.dev
-        </p>
+      {/* Footer with QR */}
+      <div className="px-5 py-3 border-t border-white/5 flex items-center justify-between">
+        <div>
+          <p className="text-[11px] text-white/40 leading-tight">扫码测试你的 Bug 人格</p>
+          <p className="text-[10px] text-white/20 font-mono mt-0.5">devbug.llmxfactor.cloud</p>
+        </div>
+        <Image
+          src="/qr.png"
+          alt="扫码测试"
+          width={56}
+          height={56}
+          className="opacity-60"
+        />
       </div>
     </div>
   );
