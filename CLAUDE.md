@@ -39,3 +39,25 @@ npm run build  # Production build (standalone output)
 
 Docker + Nginx on Tencent Cloud Lighthouse. Port 3003 mapped to container 3000.
 Domain: devbug.llmxfactor.cloud
+
+## 🚀 部署运维（本仓库可直接操作线上服务器）
+
+> 本项目已部署上线。运维真源见 `~/Projects/INFRA-INVENTORY.md`。本机已配 SSH 密钥别名，可直接操作服务器，无需额外凭证。
+
+- **服务器**：`llmx-lh`
+- **部署目录**：`/opt/vibe-check`
+- **运行方式**：docker compose（`docker-compose.yml`）
+- **域名**：devbug.llmxfactor.cloud
+- **当前状态**：已停(2026-05-25,可start复活)
+
+常用操作（本机任意目录均可执行）：
+
+```bash
+ssh llmx-lh "sudo docker compose -f /opt/vibe-check/docker-compose.yml ps"                  # 状态
+ssh llmx-lh "sudo docker compose -f /opt/vibe-check/docker-compose.yml logs --tail=200 -f"  # 日志
+ssh llmx-lh "sudo docker compose -f /opt/vibe-check/docker-compose.yml restart"             # 重启
+ssh llmx-lh "sudo docker compose -f /opt/vibe-check/docker-compose.yml start"               # 启(复活已停服务)
+ssh llmx-lh "sudo docker compose -f /opt/vibe-check/docker-compose.yml stop"                # 停
+# 更新部署(拉代码+重建, 末尾清 build 缓存防爆盘):
+ssh llmx-lh "cd /opt/vibe-check && sudo git pull && sudo docker compose -f docker-compose.yml up -d --build && sudo docker builder prune -af"
+```
